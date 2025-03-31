@@ -10,7 +10,7 @@ val spark = SparkSession.builder()
   .master("local[*]")
   .getOrCreate()
 
-
+println(spark)
 // Load Data
 
 val data = spark.read.option("header", "true")
