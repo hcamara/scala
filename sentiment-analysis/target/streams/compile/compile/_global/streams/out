@@ -1,0 +1,52 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:8:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval spark = SparkSession.builder()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:14:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval data = spark.read.option("header", "true")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:19:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdata.show(5)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:22:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval tokenizer = new RegexTokenizer()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:28:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval remover = new StopWordsRemover()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:33:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval hashingTF = new HashingTF()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:38:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval idf = new IDF()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:43:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval lr = new LogisticRegression()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:48:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval pipeline = new Pipeline()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:52:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval Array(trainingData, testData) = data.randomSplit(Array(0.8, 0.2), seed = 42)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:55:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval model = pipeline.fit(trainingData)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:58:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval predictions = model.transform(testData)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:59:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mpredictions.select("text", "label", "prediction").show(10)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:63:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval newText = Seq(("Ce produit est incroyable, je l'adore !")).toDF("text")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:64:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval prediction = model.transform(newText)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:65:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mprediction.select("text", "prediction").show()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/hamadicamara/Desktop/SPARK_SCALA/myApps/sentiment-analysis/sentiment.scala:68:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mspark.stop()[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m17 errors found[0m
