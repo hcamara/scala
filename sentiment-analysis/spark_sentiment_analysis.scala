@@ -10,10 +10,12 @@ val spark = SparkSession.builder()
   .master("local[*]")
   .getOrCreate()
 
+
 // Load Data
+
 val data = spark.read.option("header", "true")
   .option("inferSchema", "true")
-  .csv("sentiments.csv")
+  .csv(./sentiments.csv")
   .toDF("label", "text")
 
 data.show(5)
